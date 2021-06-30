@@ -1,0 +1,147 @@
+/*css reset*/
+* {box-sizing: border-box;}
+*:before, *:after {box-sizing: border-box;}/*所有伪元素也设置为盒模型*/
+* {margin: 0; padding: 0;}
+ul, ol { list-style: none; }
+a {color: inherit; text-decoration: none;}
+img {max-width: 100%; max-height: 100%;}
+
+/* style */
+body {background: #EEE;}
+.globalHeader {
+    margin: 20px;
+}
+
+@media (min-width: 500px) {
+    .globalHeader {
+      margin: 60px 0 100px;
+    }
+}
+.searchForm{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width: 500px) {/*媒体查询，大于500px时触发，自动合并*/
+    .searchForm {
+      max-width: 400px;
+      margin-left: auto;/*有最大固定宽度时，可用该方式居中*/
+      margin-right: auto;
+    }
+}
+
+.searchForm > input{
+    width:100%;
+    margin-right: 10px;
+    height: 40px;
+    padding: 0 10px;
+    border:none;
+    border-radius: 4px;
+}
+.searchForm > button{
+    white-space: nowrap;
+    padding: 0 28px;
+    border:none;
+    border-radius: 4px;
+    background:#0282B9;
+    color:white;
+    font-size: 16px;
+}
+
+.globalMain {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.siteList{
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (min-width: 500px){
+    .siteList{
+      margin-left: 0;
+      margin-right: -25px;
+      justify-content: flex-start;/*覆盖掉手机上的space-between*/
+    }
+}
+
+.siteList > li{
+    margin-bottom: 10px;
+}
+
+@media(min-width: 500px){
+    .siteList > li {
+      margin-right: 25px;
+    }
+}
+
+.siteList .site{
+    width: 160px;
+    display: flex;
+    justify-content: center;/*左右居中*/
+    align-items: center;/*上下居中*/
+    flex-direction: column;/*纵向分布*/
+    background: white;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    padding: 20px 0;/*上下间距*/
+    position: relative;
+    cursor: pointer;
+}
+.siteList .site > .logo{
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    text-transform: uppercase;/*全大写*/
+}
+.siteList .site > .link{
+    font-size:14px;
+    margin-top: 4px;
+}
+
+.siteList .site > .close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    display: none;
+    cursor: default;
+}
+
+.siteList .site:hover > .close {
+    display: block;
+}
+
+.siteList .addButton{
+    border: 1px solid #DDD;
+    background: white;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+}
+.siteList .addButton .icon{
+    width: 56px;
+    height: 56px;
+}
+
+.siteList .addButton .text {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.siteList .addButton .icon-wrapper {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
